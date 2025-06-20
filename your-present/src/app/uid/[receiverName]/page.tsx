@@ -14,8 +14,8 @@ export default function GiftDisplayPage() {
   const searchParams = useSearchParams();
 
   const [giftData, setGiftData] = useState<GiftData | null>(null);
-  const [currentThemeId, setCurrentThemeId] = useState<string>('default');
-  const [currentTheme, setCurrentTheme] = useState<Theme | undefined>(getThemeById('default'));
+  const [currentThemeId, setCurrentThemeId] = useState<string>('default_light'); // Updated fallback
+  const [currentTheme, setCurrentTheme] = useState<Theme | undefined>(getThemeById('default_light')); // Updated fallback
   const [presentTypeDisplay, setPresentTypeDisplay] = useState<string>('Unknown present');
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -28,7 +28,7 @@ export default function GiftDisplayPage() {
 
   useEffect(() => {
     if (typeof window !== 'undefined' && receiverNameFromParams) {
-      const themeId = searchParams.get('theme') || 'default';
+      const themeId = searchParams.get('theme') || 'default_light'; // Updated fallback
       const typeQuery = searchParams.get('type');
 
       setCurrentThemeId(themeId);
@@ -64,7 +64,7 @@ export default function GiftDisplayPage() {
   }, [receiverNameFromParams, searchParams]);
 
   // Fallback to default theme if currentTheme is somehow undefined
-  const themeToApply = currentTheme || getThemeById('default')!; // Add non-null assertion if default always exists
+  const themeToApply = currentTheme || getThemeById('default_light')!; // Updated fallback
 
   if (isLoading) {
     return (
@@ -81,7 +81,7 @@ export default function GiftDisplayPage() {
           A Special Gift for {receiverNameFromParams || "Someone Special"}!
         </h1>
 
-        {error && <p className="text-red-500 my-4">{error}</p>}
+        {error && <p className="text-error my-4">{error}</p>}
 
         <div className="my-6">
           <h2 className={`text-xl md:text-2xl font-semibold mb-2 ${themeToApply.colors.secondaryAccent}`}>
@@ -91,7 +91,7 @@ export default function GiftDisplayPage() {
             <img
               src={giftData.imageDataUrl}
               alt={presentTypeDisplay}
-              className="my-4 rounded-lg shadow-md max-w-xs mx-auto"
+              className="my-4 rounded-lg shadow-md max-h-60 sm:max-h-72 w-auto mx-auto"
             />
           )}
         </div>

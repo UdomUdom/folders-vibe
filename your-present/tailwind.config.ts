@@ -9,26 +9,32 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        'base-100': 'oklch(95.127% 0.007 260.731)',
-        'base-200': 'oklch(87.18% 0.013 259.63)',
-        'base-300': 'oklch(79.35% 0.018 259.07)',
-        'base-content': 'oklch(26.8% 0.023 259.1)',
-        'primary': 'oklch(71.63% 0.191 274.77)',
-        'primary-content': 'oklch(99.23% 0.005 274.77)',
-        'secondary': 'oklch(74.4% 0.161 23.9)',
-        'secondary-content': 'oklch(16.6% 0.023 23.9)',
-        'accent': 'oklch(75.2% 0.186 160.04)',
-        'accent-content': 'oklch(99.1% 0.006 160.04)',
-        'neutral': 'oklch(54.6% 0.023 258.8)',
-        'neutral-content': 'oklch(97.9% 0.006 258.8)',
-        'info': 'oklch(80.3% 0.123 220.0)',
-        'info-content': 'oklch(21.5% 0.033 220.0)',
-        'success': 'oklch(75.2% 0.169 150.0)',
-        'success-content': 'oklch(14.5% 0.029 150.0)',
-        'warning': 'oklch(81.0% 0.161 80.0)',
-        'warning-content': 'oklch(26.5% 0.031 80.0)',
-        'error': 'oklch(70.0% 0.218 25.0)',
-        'error-content': 'oklch(98.5% 0.005 25.0)'
+        'base-100': 'var(--color-base-100)',
+        'base-200': 'var(--color-base-200)',
+        'base-300': 'var(--color-base-300)',
+        'base-content': 'var(--color-base-content)',
+        'primary': 'var(--color-primary)',
+        'primary-content': 'var(--color-primary-content)',
+        'secondary': 'var(--color-secondary)',
+        'secondary-content': 'var(--color-secondary-content)',
+        'accent': 'var(--color-accent)',
+        'accent-content': 'var(--color-accent-content)',
+        'neutral': 'var(--color-neutral)',
+        'neutral-content': 'var(--color-neutral-content)',
+        'info': 'var(--color-info)',
+        'info-content': 'var(--color-info-content)',
+        'success': 'var(--color-success)',
+        'success-content': 'var(--color-success-content)',
+        'warning': 'var(--color-warning)',
+        'warning-content': 'var(--color-warning-content)',
+        'error': 'var(--color-error)',
+        'error-content': 'var(--color-error-content)',
+      },
+      borderRadius: {
+        // Keep existing Tailwind default radii by extending
+        'selector': 'var(--radius-selector)', // 2rem
+        'field': 'var(--radius-field)',     // 0.5rem
+        'box': 'var(--radius-box)',         // 1rem
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -38,5 +44,6 @@ const config: Config = {
     },
   },
   plugins: [],
+  // darkMode: false, // Explicitly set to false or remove (default is false if not using class strategy)
 };
 export default config;
