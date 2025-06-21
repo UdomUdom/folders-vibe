@@ -1,0 +1,27 @@
+# Go build / environment files
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+vendor/
+*.log
+
+# Uploads directory
+uploads/
+
+# Environment files
+.env*
+!.env.example
+
+# IDE / Editor specific files
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
+
+# Electron app node_modules
+desktop-app/node_modules/

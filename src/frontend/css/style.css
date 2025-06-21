@@ -1,0 +1,464 @@
+/* General Styles */
+:root {
+    --primary-bg: #3D3B40; /* Dark background */
+    --secondary-bg: #525CEB; /* Vibrant Blue/Purple */
+    --accent-bg: #BFCFE7; /* Light Blue/Grey */
+    --text-color-light: #F8EDFF; /* Light text for dark backgrounds */
+    --text-color-dark: #1c1c1e; /* Dark text for light backgrounds */
+    --container-bg: #ffffff; /* White for main content areas */
+    --input-bg: #f0f0f0;
+    --border-color: #dcdcdc;
+    --error-color: #ff3b30;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--primary-bg);
+    color: var(--text-color-light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-size: 16px;
+}
+
+.container {
+    background-color: var(--container-bg);
+    color: var(--text-color-dark);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 100%;
+}
+
+/* Auth Page Specific Styles */
+.auth-container {
+    max-width: 400px;
+    text-align: center;
+}
+
+.auth-form h2 {
+    color: var(--secondary-bg);
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: var(--input-bg);
+    color: var(--text-color-dark);
+}
+
+.auth-form button[type="submit"] {
+    background-color: var(--secondary-bg);
+    color: var(--text-color-light);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.auth-form button[type="submit"]:hover {
+    background-color: #4148c7; /* Darker shade of secondary */
+}
+
+.toggle-auth {
+    margin-top: 20px;
+    font-size: 0.9em;
+}
+
+.toggle-auth a {
+    color: var(--secondary-bg);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.toggle-auth a:hover {
+    text-decoration: underline;
+}
+
+.error-message {
+    color: var(--error-color);
+    font-size: 0.9em;
+    margin-top: 10px;
+    min-height: 1.2em; /* Reserve space to prevent layout shifts */
+}
+
+
+/* Chat Page Specific Styles */
+.chat-container {
+    max-width: 900px;
+    height: calc(100vh - 40px); /* Full height minus some padding */
+    max-height: 700px; /* Max height for very tall screens */
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-header {
+    background-color: var(--secondary-bg);
+    color: var(--text-color-light);
+    padding: 10px 20px;
+    border-radius: 8px 8px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-header h1 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.user-info {
+    font-size: 0.9em;
+}
+
+#logout-button {
+    background-color: var(--accent-bg);
+    color: var(--text-color-dark);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+#logout-button:hover {
+    background-color: #a8b8d0; /* Darker accent */
+}
+
+.chat-main {
+    display: flex;
+    flex-grow: 1; /* Allows this section to fill available space */
+    overflow: hidden; /* Prevents scrollbars on chat-main itself */
+    border: 1px solid var(--border-color);
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+}
+
+.contacts-sidebar {
+    width: 250px;
+    background-color: var(--accent-bg);
+    padding: 15px;
+    border-right: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.contacts-sidebar h2 {
+    color: var(--primary-bg);
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+#contacts-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1;
+}
+
+.contact-item {
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    color: var(--text-color-dark);
+}
+
+.contact-item:hover {
+    background-color: #d0d9e8; /* Lighter accent shade */
+}
+
+.contact-item.active-chat {
+    background-color: var(--secondary-bg);
+    color: var(--text-color-light);
+    font-weight: bold;
+}
+
+.add-contact {
+    margin-top: 15px;
+}
+.add-contact input[type="text"]{
+    width: calc(100% - 22px);
+    padding: 8px 10px;
+    border: 1px solid var(--primary-bg);
+    border-radius: 4px;
+    margin-bottom: 5px;
+}
+.add-contact button {
+    width: 100%;
+    padding: 8px;
+    background-color: var(--secondary-bg);
+    color: var(--text-color-light);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+.chat-area {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff; /* White chat background */
+}
+
+.chat-window-header {
+    padding: 10px 15px;
+    border-bottom: 1px solid var(--border-color);
+    background-color: #f9f9f9;
+    font-weight: bold;
+}
+
+#chatting-with-username {
+    color: var(--secondary-bg);
+}
+
+.messages-display {
+    flex-grow: 1;
+    padding: 15px;
+    overflow-y: auto; /* Enables scrolling for messages */
+    display: flex;
+    flex-direction: column; /* Stack messages vertically */
+}
+
+.message {
+    max-width: 70%;
+    padding: 8px 12px;
+    border-radius: 18px; /* More bubbly */
+    margin-bottom: 10px;
+    font-size: 0.95em;
+    line-height: 1.4;
+    word-wrap: break-word;
+}
+
+.message.self {
+    background-color: var(--secondary-bg);
+    color: var(--text-color-light);
+    align-self: flex-end; /* Align self messages to the right */
+    border-bottom-right-radius: 4px; /* Flat edge for speech bubble effect */
+}
+
+.message.other {
+    background-color: var(--accent-bg);
+    color: var(--text-color-dark);
+    align-self: flex-start; /* Align other messages to the left */
+    border-bottom-left-radius: 4px; /* Flat edge for speech bubble effect */
+}
+
+.message-content {
+    margin: 0;
+}
+.message-content a {
+    color: inherit; /* Make links blend with message color */
+    text-decoration: underline;
+}
+.message-content img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-top: 5px;
+}
+
+
+.message-timestamp {
+    display: block;
+    font-size: 0.75em;
+    color: inherit; /* Adjust if needed for contrast */
+    opacity: 0.8;
+    margin-top: 4px;
+    text-align: right; /* Timestamps to the right within the bubble */
+}
+.message.other .message-timestamp {
+    text-align: left;
+}
+
+
+.message-input-area {
+    display: flex;
+    padding: 10px 15px;
+    border-top: 1px solid var(--border-color);
+    background-color: #f9f9f9;
+}
+
+#message-input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 20px; /* Rounded input field */
+    margin-right: 10px;
+    background-color: var(--input-bg);
+}
+
+.file-input-label {
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 1.2em;
+    color: var(--secondary-bg);
+    align-self: center;
+}
+
+#send-button {
+    background-color: var(--secondary-bg);
+    color: var(--text-color-light);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px; /* Rounded button */
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#send-button:hover {
+    background-color: #4148c7;
+}
+
+/* Styles for message editing */
+.message .edit-button {
+    font-size: 0.75em;
+    padding: 2px 5px;
+    margin-left: 8px;
+    border: 1px solid var(--text-color-light);
+    background-color: transparent;
+    color: var(--text-color-light);
+    border-radius: 3px;
+    cursor: pointer;
+    vertical-align: middle; /* Align with text if needed */
+}
+.message.other .edit-button { /* Should not appear on other's messages, but good defensive styling */
+    display: none;
+}
+.message.self .edit-button:hover {
+    background-color: var(--text-color-light);
+    color: var(--secondary-bg);
+}
+
+.edited-mark {
+    font-style: italic;
+    font-size: 0.8em;
+    opacity: 0.7;
+}
+
+.message.editing .message-content-wrapper {
+    /* Styles for when a message is actively being edited */
+    padding: 5px;
+    border: 1px dashed var(--secondary-bg);
+}
+.edit-input {
+    width: calc(100% - 10px); /* Full width within its container */
+    min-height: 40px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 5px;
+    margin-bottom: 5px;
+    font-family: inherit;
+    font-size: inherit;
+}
+.save-edit-button, .cancel-edit-button {
+    font-size: 0.8em;
+    padding: 3px 8px;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+.save-edit-button {
+    background-color: var(--secondary-bg);
+    color: var(--text-color-light);
+    border: 1px solid var(--secondary-bg);
+}
+.cancel-edit-button {
+    background-color: #ccc;
+    color: var(--text-color-dark);
+    border: 1px solid #bbb;
+}
+
+.disappear-label {
+    margin-left: 10px;
+    font-size: 0.9em;
+    color: #555;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.disappear-label input[type="checkbox"] {
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.message-disappeared em {
+    color: #777; /* Grey out disappeared message text */
+    font-style: italic;
+}
+
+.search-area {
+    margin-bottom: 10px;
+}
+
+#search-input {
+    width: calc(100% - 22px); /* Account for padding and border */
+    padding: 8px 10px;
+    border: 1px solid var(--primary-bg);
+    border-radius: 4px;
+    background-color: var(--input-bg);
+    color: var(--text-color-dark);
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .chat-main {
+        flex-direction: column;
+    }
+    .contacts-sidebar {
+        width: 100%;
+        height: 200px; /* Fixed height for contacts on mobile */
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+    }
+    .chat-container {
+        height: 95vh; /* Take more vertical space on mobile */
+        max-height: none;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+    .auth-container {
+        padding: 15px;
+    }
+    .chat-header h1 {
+        font-size: 1.2em;
+    }
+    .messages-display {
+        padding: 10px;
+    }
+    .message-input-area {
+        padding: 8px 10px;
+    }
+    #message-input, #send-button {
+        padding: 8px 15px;
+    }
+}
